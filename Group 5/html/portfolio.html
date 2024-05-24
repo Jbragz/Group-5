@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+<style>
+   /* Modal CSS */
+   .modal-container {
+    display: none; /* Initially hidden */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    text-align: left;
+    position: relative;
+}
+
+.close-btn {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+  </style>
+</head>
+<body>
+   <div class="container">
+       <div class="profile-card"> 
+            <div class="profile-pic">
+                <img src="image\Jesse_Robredo.jpg" alt="user avatar">
+            </div>
+
+            <div class="profile-details">
+                 <div class="intro">
+                    <h2>Jesse Robredo</h2>
+                    <h4>Politician/Public Servant</h4>
+                    <div class="social">
+                    </div>
+                 </div>
+
+                 <div class="contact-info">
+                    <div class="row">
+                         <div class="icon">
+                            <i class="ri-graduation-cap-fill"></i>
+                         </div>
+                         <div class="content">
+                            <span>Education</span>
+                            <h5>Harvard University, De La Salle University Manila</h5>
+                         </div>
+                    </div>
+    
+                   <div class="row">
+                    <div class="icon">
+                       <i class="fa fa-map-marker"  style="color:var(--light-purple)"></i>
+                    </div>
+                    <div class="content">
+                       <span>Location</span>
+                       <h5>Naga</h5>
+                    </div>
+                 </div>
+
+                 <div class="row">
+                  <div class="icon">
+                     <i class="fa-solid fa-cake-candles" style="color: #fb232e;"></i>
+                  </div>
+                  <div class="content">
+                     <span>Birth Date</span>
+                     <h5>May 27, 1958</h5>
+                  </div>
+               </div>
+
+               <div class="row">
+                <div class="icon">
+                    <i class="ri-skull-line"></i> 
+                </div>
+                <div class="content">
+                   <span>DIED</span>
+                   <h5> August 18, 2012 (age 54 years)</h5>
+                </div>
+             </div>
+
+            </div>
+         </div>
+       </div>
+
+       <!----about section ----->
+       <div class="about">
+           <h1>About Jesse Robredo</h1>
+           <h3>AS A PUBLIC SERVANT: </h3>
+
+           <p>
+
+            Jesse M. Robredo, who served as mayor of Naga City, Philippines for 19 years, is an internationally recognized expert in local governance.
+            
+            He is a graduate of Masters in Public Administration at the John F. Kennedy School of Government, Harvard University, Cambridge, Massachusetts. Previously, he completed his Masters in Business Administration at the University of the Philippines, finishing at the top of his class as university and college scholar. He is an alumnus of the De La Salle University, having obtained undergraduate degrees in Industrial Management Engineering and Mechanical Engineering.
+            
+            In 1988, he won his mayoralty bid, making him the youngest Philippine city mayor at the age 29. He would later serve the city for an unprecedented six 3-year terms as local chief executive.
+            
+            Cited in 1999 by Asiaweek Magazine for transforming Naga City from a lethargic Philippine city into one of Asia’s Most Improved, Robredo energized the bureaucracy, dramatically improved stakeholdership and people participation in governance, in the process restoring Naga to its preeminent position as premier city of the Bicol Region. Today, Naga is considered a model local government in the country and a laboratory of local government innovation.
+            
+            Robredo was known for his “tsinelas leadership” when he served as Naga City mayor, and even when he joined the Cabinet of President Benigno Aquino III as chief of the Department of the Interior and Government (DILG). 
+            
+            Tsinelas leadership is the willingness to wade in the flood, willing to go where you normally do not go, to the most remote areas, just to be with the most disadvantaged people. Sec Jesse rarely said no; that was why he was one of the most traveled Cabinet members. This kind of leadership breaks barriers, showing how leaders must be accessible to those they serve. 
+            
+            Tsinelas leadership is the willingness to wade in the flood, willing to go where you normally do not go, to the most remote areas, just to be with the most disadvantaged people. We all know Sec Jesse rarely said no; that was why he was one of the most traveled Cabinet members. He also famously said that “(t)he most important ingredient of leadership is character. Most of the proficiencies can be learned. It is what is inside you that is difficult to change.” He was a certified servant leader who practiced the values of empowerment, transparency, and good governance.
+            
+          </p>
+
+          <div class="work">
+             <div class="workbox">
+                 <div class="icon">
+                 </div>
+                 <div class="explore__card">
+                  <span><i class="ri-award-line"></i></span>
+                  <h4>Notable Contributions:</h4>
+                  <li><a href="#" onclick="displayModal('modalFDP')">Full Disclosure Policy (FDP).</a><br></li>
+                                  
+                  <li><a href="#" onclick="displayModal('modalSGH')">Seal of Good Housekeeping (SGH).</a><br></li>
+                                  
+                  <li><a href="#" onclick="displayModal('modalWAJ')">War against “jueteng,” other illegal activities.</a><br></li>
+                                  
+                  <li><a href="#" onclick="displayModal('modalTRN')">Transparency reforms in Naga.</a><br></li>
+              </div>
+              
+             </div>
+             <div id="modalFDP" class="modal-container">
+                <div class="modal-content">
+                  <span class="close-btn" onclick="closeModal('modalFDP')">&times;</span>
+                  <div id="modalContentFDP">
+                    <p> Full Disclosure Policy (FDP)</p>
+                  <p>As DILG secretary, Robredo advocated transparency in local governments. The Full Disclosure Policy requires local governments to disclose 12 important financial documents to the public to ensure transparency and accountability in how public funds are spent. 
+
+                    In November 2012, the DILG formally launched the FDP Portal, allowing better and easier access for citizens online.
+                    </p> <br>
+                 
+                  </div>
+                </div>
+              </div>
+
+              <div id="modalSGH" class="modal-container">
+                <div class="modal-content">
+                  <span class="close-btn" onclick="closeModal('modalSGH')">&times;</span>
+                  <div id="modalContentsSGH">
+                    <p>Seal of Good Housekeeping (SGH)</p>
+                  <p>First introduced in 2011, the Seal of Good Housekeeping monitors and rewards LGUs that observe good internal governance in areas of legislation, development planning, resource generation, and resource allocation. (READ: Robredo legacy: P1-B fund ready for performing LGUs)
+
+                    While the initiative prompted 84% SGH compliance among LGUs in 2014, corruption reportedly persisted. To address this, the DILG introduced the Seal of Good Local Governance, an improved version of the SGH.
+                    </p><br>
+                 
+                  </div>
+                </div>
+              </div>
+
+              <div id="modalWAJ" class="modal-container">
+                <div class="modal-content">
+                  <span class="close-btn" onclick="closeModal('modalWAJ')">&times;</span>
+                  <div id="modalContentWAJ">
+                    <p>War against “jueteng,” other illegal activities</p>
+                <p>Robredo sought to eliminate “symbols of bad governance,” particularly the illegal numbers game “jueteng” and lewd shows, when he was mayor. When he was DILG chief, he imposed a one-strike policy against cops involved in gambling activities.</p><br>
+                  </div>
+                </div>
+              </div>
+
+              <div id="modalTRN" class="modal-container">
+                <div class="modal-content">
+                  <span class="close-btn" onclick="closeModal('modalTRN')">&times;</span>
+                  <div id="modalContentTRN">
+                    <p>Transparency reforms in Naga</p>
+                     <p>Pursuant to the Empowerment Ordinance of Naga City, the People’s Council allows members of local basic sectors and non-governmental organizations to participate in the deliberation and evaluation of city plans.
+
+                        The council is considered a pioneer in participatory democracy at the local level, and continues to operate today. (READ: Jesse Robredo’s journey back home)
+                        Robredo also spearheaded I-Governance, which allows the public to access free information on all city services, transactions, and financial documents. This was a feat in using technology in governance as the information could be accessed on the Naga government website.  Directories were also handed out in person.
+                        
+                        In recognition of his work, Robredo received 14 major individual awards, including the 2000 Ramon Magsaysay Award for Government Service, the 1996 Outstanding Young Persons of the World (TOYP) Award, the Outstanding Young Men of the Philippines (TOYM), 1998 Konrad Adenauer Medal of Excellence as Most Outstanding City Mayor of the Philippines and the first ever “Dangal ng Bayan ” Award of the Civil Service Commission. In March 2008, he was conferred an honorary Doctor of Humanities degree by the Far Eastern University in Manila.
+                        </p> <br>
+                  </div>
+                </div>
+              </div>
+
+              <div class="workbox">
+                <div class="icon"></div>
+                <div class="explore__card">
+                    <span><i class="ri-user-star-fill"></i></span>
+                    <h4>AS A FATHER AND HUSBAND</h4>
+                    <ul>
+                        <li><a href="#" onclick="displayModal('modalabt')">Being a Father.</a></li>
+                        <li><a href="#" onclick="displayModal('modalaik')">To Aika Robredo</a></li>
+                        <li><a href="#" onclick="displayModal('modaltri')">To Tricia Robredo.</a></li>
+                        <li><a href="#" onclick="displayModal('modaljill')">To Jillian Robredo.</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="modalabt" class="modal-container">
+                <div class="modal-content">
+                    <span class="close-btn" onclick="closeModal('modalabt')">&times;</span>
+                    <div id="modalContentabt">
+                        <h3>As a Father, Husband and a Public Servant</h3>
+                        <div style="display: block; align-items: center;">
+                            <img src="image/sd1t3dgogyd81.webp" alt="Image Description" style="width: 200px; height: auto; margin-right: 10px;">
+                            <p>Robredo won as Naga City mayor shortly after the People Power revolt overthrew the late dictator, former President Ferdinand Marcos, and held that position for 19 years.</p>
+                            <p>But even as he got married and had three children along the way while turning his hometown with his tsinelas-style leadership, Robredo made sure to make every second with his daughters worth it.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="modalaik" class="modal-container">
+                <div class="modal-content">
+                    <span class="close-btn" onclick="closeModal('modalaik')">&times;</span>
+                    <div id="modalContentaik">
+                        <h3>To Aika</h3>
+                        <div style="display: block; align-items: center;">
+                            <img src="image/1643073213253.jpg" alt="Image Description" style="width: 200px; height: auto; margin-right: 10px;">
+                            <p>Aika, his eldest, said that she will always remember their father for being “regularly available” to them.</p>
+                            <p>“Iyong pinaka naalala ko kapag naglu-look back ako na sa aming lima dati, parang siya 'yung pinaka hindi busy kapag hinahanap namin”</p>
+                            <p>Aika said Robredo was even the one who will feel miffed if his daughters and wife did not have enough time to answer his texts.</p>
+                            <p>“Parati niyang sinasabi, 'Grabe naman kayo. Huwag ninyong sabihin mas busy pa kayo lahat sa akin'</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="modaltri" class="modal-container">
+              <div class="modal-content">
+                  <span class="close-btn" onclick="closeModal('modaltri')">&times;</span>
+                  <div id="modalContenttri">
+                      <h3>To Tricia</h3>
+                      <div style="display: block; align-items: center;">
+                          <img src="image\CBKgZsEUgAAg2gU.jpg" alt="Image Description" style="width: 200px; height: auto; margin-right: 10px;">
+                          <p>Tricia, in fact, can still vividly remember the former Naga City mayor in one of her swimming events. She and Jillian were competitive swimmers.</p>
+                          <p>“When it comes to any of our events, any of our milestones, parang unspoken rule to drop everything,” she said, adding that their father made sure that they were the most important to him.</p>
+                          <p>She remembered the one time she joined a swimming competition and Jesse wasnt still there when she was about to dive. But midway to the end, she raised her head for a stroke and saw her father standing at the end of the line.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+              
+          <div id="modaljill" class="modal-container">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('modaljill')">&times;</span>
+                <div id="modalContentjill">
+                    <h3>To Jillian</h3>
+                    <div style="display: block; align-items: center;">
+                        <img src="image\280499057_10167190099615713_246097501326619494_n.jpg" alt="Image Description" style="width: 200px; height: auto; margin-right: 10px;">
+                        <p>Believed by many to be Robredo’s look-a-like, Jillian, who is now studying in New York, was only 12 when their father died nine years ago.</p>
+                        <p>That time, she was into her “fan girl” mode as she was into Justin Bieber, One Direction, and even local celebrities. She remembers her father making it a point for her to meet these celebrities whenever he can do something about it.</p>
+                        <p>Jillian also gave a glimpse into what the late Naga mayor was like as a husband to the vice president, who, at that time, was working as a human rights lawyer.</p>
+                        <p>She said that the two used to engage in “PDA (public display of affection),” and that their father used to want to wear matching shirts with his wife and called her “loves” and “bok.”</p>
+                    </div>
+                </div>
+            </div>
+          </div>
+         
+        
+<script>
+                function displayModal(modalId) {
+    var modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = "flex"; // Display modal when clicked
+    }
+    }
+
+         function closeModal(modalId) {
+    var modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = "none"; // Hide modal when closed
+    }
+    }
+ </script>
+            
+              
+</body>
+</html>
